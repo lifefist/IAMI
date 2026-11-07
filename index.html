@@ -12,17 +12,29 @@
   h1{margin:0 0 14px;text-align:center;font-size:17px;font-weight:600;letter-spacing:6px;color:#9fabdb}
   canvas{display:block;width:100%;height:auto;border-radius:16px;background:#9bd4ff;touch-action:none;cursor:pointer;
     box-shadow:0 26px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}
-  #hint{margin-top:14px;text-align:center;font-size:13px;line-height:2;color:#8f9ac4}
+
+  /* 触屏按键：画布下方的独立操作区，不再覆盖画面 */
+  #touch{display:none;justify-content:space-between;align-items:center;
+    padding:18px 6px 0;user-select:none}
+  body.touch #touch{display:flex}
+  .grp{display:flex;gap:16px}
+  .btn{width:72px;height:72px;border-radius:50%;border:2px solid rgba(255,255,255,.5);
+    background:rgba(18,24,58,.85);color:#fff;font-size:22px;font-weight:700;
+    user-select:none;touch-action:none;cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,.45)}
+  .btn:active{background:rgba(120,140,255,.55);transform:translateY(2px)}
+  #bJump{width:86px;height:86px;background:rgba(255,190,60,.85);
+    border-color:rgba(255,222,150,.85);color:#2a1c00}
+
+  #hint{margin-top:16px;text-align:center;font-size:13px;line-height:2;color:#8f9ac4}
   kbd{display:inline-block;padding:1px 7px;border-radius:6px;background:#2a3160;border:1px solid #3d4680;
     border-bottom-width:2px;font-family:inherit;font-size:12px;color:#dfe5ff}
-  #touch{position:absolute;left:0;right:0;bottom:34px;display:none;justify-content:space-between;
-    align-items:flex-end;padding:0 20px;pointer-events:none}
-  body.touch #touch{display:flex}
-  .grp{display:flex;gap:14px}
-  .btn{pointer-events:auto;width:72px;height:72px;border-radius:50%;border:2px solid rgba(255,255,255,.5);
-    background:rgba(18,24,58,.34);color:#fff;font-size:22px;font-weight:700;user-select:none;touch-action:none}
-  .btn:active{background:rgba(120,140,255,.45)}
-  #bJump{width:86px;height:86px;background:rgba(255,190,60,.3);border-color:rgba(255,222,150,.75)}
+
+  @media (max-width:400px){
+    .btn{width:64px;height:64px;font-size:20px}
+    #bJump{width:76px;height:76px}
+    #touch{padding-top:12px}
+  }
 </style>
 </head>
 <body>
